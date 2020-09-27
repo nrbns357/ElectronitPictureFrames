@@ -10,7 +10,10 @@
             background-color: white;
         }
         img{
-            width: 100%;
+            max-width: 97vw;
+            max-height: 97vh;
+            display:block;
+            margin:auto;
         }
     </style>
     <script>
