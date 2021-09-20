@@ -23,7 +23,7 @@
         <br/>
         <br/>
         <form method='post' action='imageSave.php' enctype='multipart/form-data'>
-            사진 추가 <input type="file" name="image"/>
+            사진 추가 <input type="file" name="image" multiple/>
             <input type="submit"/>
         </form>
         <button onclick="location.href = './view.php'">
@@ -89,7 +89,7 @@
         let isTouching = false
         //이미지를 누르기 시작 했을때 시작되는 함수
         async function imageTouchStart(imageName){
-            isTouching = true
+            isTouching = true;
             const image = document.getElementById(imageName);
             image.classList.add('deleteWatingImage');
 
