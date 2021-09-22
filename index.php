@@ -23,12 +23,12 @@
         <br/>
         <br/>
         <form method='post' action='imageSave.php' enctype='multipart/form-data'>
-        사진 추가 <input type="file" name="image" multiple/>
-        <input type="submit"/>
-    </form>
-    <button onclick="location.href = './view.php'">
-    사진들 보러가기
-    </button>
+            사진 추가 <input type="file" name="image"/>
+            <input type="submit"/>
+        </form>
+        <button onclick="location.href = './view.php'">
+            사진들 보러가기
+        </button>
         <div id='imagesDiv'>
         </div>
     </body>
@@ -86,10 +86,10 @@
         window.addEventListener('scroll', () => {load();});
         load();
 
-        let isTouching = false;
+        let isTouching = false
         //이미지를 누르기 시작 했을때 시작되는 함수
         async function imageTouchStart(imageName){
-            isTouching = true;
+            isTouching = true
             const image = document.getElementById(imageName);
             image.classList.add('deleteWatingImage');
 
@@ -100,8 +100,7 @@
                 }
                 await new Promise(resolve => setTimeout(resolve, 100));
             }
-            fetch(`/delete.php?del=${delete : imageName}`);
-            image.classList.remove(deleteWatingImage');
+            image.classList.remove('deleteWatingImage');
         }
 
         //이미지에서 손을 땠을때 시작되는 함수
@@ -124,11 +123,11 @@
 
         function mouseClickImage(imageName){
             const image = document.getElementById(imageName);
-            alert(image);
+            fetch(`delete.php?deleteImg=${image}`);
         }
-
+        
         window.open('','_parent',''); 
-        //window.close();
+        window.close();
         //카카오 웹으로 들어온다면 크롬으로 키기
         if(navigator.userAgent.includes('KAKAO')){
             //location.href='http://intent://www.iubns.net/ElectronPictureFrames#Intent;scheme=http;package=com.android.chrome;end';
